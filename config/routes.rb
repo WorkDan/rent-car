@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users,
     path: '',
-    path_names: { sign_up: :sign_up },
+    path_names:  { sign_up: :sign_up, sign_out: :logout },
     controllers: { registrations: :registrations }
 
     root 'home#index'
