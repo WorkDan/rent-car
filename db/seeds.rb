@@ -15,7 +15,6 @@ Vehicle.create!(
   doors_count: 4,
   air_conditioning: true,
   automatic_gearbox: false,
-  free: true
 )
 
 Vehicle.create!(
@@ -28,7 +27,6 @@ Vehicle.create!(
   doors_count: 4,
   air_conditioning: true,
   automatic_gearbox: false,
-  free: true
 )
 
 Vehicle.create!(
@@ -41,6 +39,5 @@ Vehicle.create!(
   doors_count: 4,
   air_conditioning: true,
   automatic_gearbox: false,
-  free: true
 )
 

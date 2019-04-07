@@ -1,8 +1,9 @@
+require_relative '../monads/bookings'
+
 class BookingsController < ApplicationController
   before_action :authenticate_user!
 
-  def index
-  end
+  def index; end
 
   def show
     @booking = current_user.bookings.find(params[:id])
@@ -13,13 +14,20 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = vehicle.bookings.create!(user_id: current_user.id, price: 10, status: 'open')
+    result = ::Bookings::Create::Action.new.call(
+      current_user, params: params
+    )
 
-    redirect_to bookings_path
+    if result.success?
+      @booking = result.value!
+      redirect_to bookings_path
+    else
+      render :new
+    end
   end
 
   def update
-    @booking = current_user.bookings.find(params[:id])
+    @booking = current_user.bookings.find(params[:id].to_i)
     @booking.closed!
 
     redirect_back(fallback_location: root_path)

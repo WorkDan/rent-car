@@ -41,21 +41,23 @@ RSpec.describe BookingsController do
     end
   end
 
-  context "POST create" do
-    it 'success booking' do
-      sign_in user
+  describe "success" do
+    context "POST create" do
+      it "success booking" do
+        sign_in user
 
-      post :create, params: { vehicle_id: vehicle.id, price: 10 }
+        post :create, params: { vehicle_id: vehicle.id, price: 10 }
 
-      expect(response).to have_http_status(302)
-    end
+        expect(response).to have_http_status(302)
+      end
 
-    it 'return status - open' do
-      sign_in user
+      it 'return status - open' do
+        sign_in user
 
-      post :create, params: { vehicle_id: vehicle.id, price: 10 }
+        post :create, params: { vehicle_id: vehicle.id, price: 10 }
 
-      expect(assigns(:booking).status).to eq 'open'
+        expect(assigns(:booking).status).to eq 'open'
+      end
     end
   end
 
