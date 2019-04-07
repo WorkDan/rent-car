@@ -1,19 +1,19 @@
 <form action="/search" method="get">
   <div class="form-group">
     <span class="form-label">Location</span>
-    <input class="form-control" type="text" placeholder="City" required>
+    <input class="form-control" type="text" placeholder="City" name="city" required>
   </div>
   <div class="row">
     <div class="col-sm-6">
       <div class="form-group">
         <span class="form-label">Check In</span>
-        <input class="form-control" type="date" required>
+        <input class="form-control" name="start_date" type="date" required>
       </div>
     </div>
     <div class="col-sm-6">
       <div class="form-group">
         <span class="form-label">Check out</span>
-        <input class="form-control" type="date" required>
+        <input class="form-control" name="end_date" type="date" required>
       </div>
     </div>
   </div>

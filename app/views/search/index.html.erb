@@ -1,21 +1,7 @@
-
-
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6 p-3">
-        <div class="card">
-          <img class="card-img-left" src="https://charmouth.org/charmouth_village/wp-content/uploads/2016/07/SE3-286x180.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
-            <h5 class="card-title">Description:</h5>
-            <ul class="list-styled mt-3 mb-4">
-              <li>Бензин</li>
-              <li>Стекло очиститель</li>
-              <li>Автоматическая трансмиссия</li>
-            </ul>
-            <a href="#" class="btn btn-primary">Booking</a>
-          </div>
-        </div>
-      </div>
-    </div>
+<% @vehicles.each do |item| %>
+  <div>
+    <p><%= item.brand%></p>
+    <p><%= item.model%></p>
+    <p><a href="<%= new_booking_path(vehicle_id: item.id)%>" class="btn btn-primary">Go to bookings</a></p>
   </div>
+<% end %>

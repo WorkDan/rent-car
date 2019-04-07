@@ -1,0 +1,10 @@
+<div>
+  <p><%= @booking.vehicle.model %></p>
+  <% if @booking.open? %>
+    <%= form_tag booking_path(@booking), method: :put do %>
+      <p><input type="submit" value="Close booking"></p>
+    <% end %>
+  <% else %>
+    <p>Closed!</p>
+  <% end %>
+</div>

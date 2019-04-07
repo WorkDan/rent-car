@@ -1,0 +1,5 @@
+<%= form_tag bookings_path, method: :post do %>
+  <input type="hidden" name="vehicle_id" value="<%= @vehicle.id%>">
+  <input type="hidden" name="price" value="10">
+  <input type="submit">
+<% end %>

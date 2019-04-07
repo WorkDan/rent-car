@@ -1,0 +1,6 @@
+<ul>
+  <% current_user.bookings.each do |item|%>
+    <li><a href="<%= booking_path(item) %>">Model: <%= item.vehicle.model%></a></li>
+    <li>Price: <%= item.price%></li>
+  <% end %>
+</ul>
